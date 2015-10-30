@@ -1,0 +1,408 @@
+body {
+    color:rgba(0,0,0,0.7);
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	/*font-family: 'Fauna One', serif;*/
+	font-size:14px;
+	line-height:22px;
+}
+
+.menu {
+	font-size:14px;
+}
+
+.home_logo {
+    position:absolute;
+    top:50%;
+    left:50%;
+	width:300px;
+    margin-left:-150px;
+    margin-top:-130px;
+    z-index:888;
+    
+}
+
+h3 {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    /*font-family: 'Playfair Display', serif;*/
+    font-size:42px;
+	font-weight:400;
+    text-align:center;
+    line-height: 40px;
+    margin-top: 0px;
+    margin-bottom:46px;
+    color:#666257;
+}
+
+h4 {
+    font-size:24px;
+    margin:16px 0;
+    font-weight:normal;
+}
+
+.intro {
+	padding:40px 10px;
+	background: #EFEACB; 
+	color:rgba(0,0,0,0.6);
+}
+
+.wrapper {
+    width:100%;
+    max-width:925px; 
+    padding:40px 10px; 
+    margin:0 auto;
+}
+
+#dl-menu {
+  display: none;
+}
+
+.nav-wrapper {
+    width: 100%;
+    max-width: 925px;
+    padding: 0px 10px;
+    margin: 0 auto;
+}
+
+.menu, .submenu {
+    list-style:none;
+    padding:0;  
+    margin:0;
+}
+
+.menu li {
+    display:block;
+    float:left; 
+    position:relative;
+}
+
+.menu li a {
+    color:white;
+    display:block;
+    padding:23px 30px 17px 30px;
+	font-size:15px;
+}
+
+.menu li.logo_menu a {
+    padding:15px 30px 10px 25px;
+}
+
+.submenu {
+    display:none;
+    position:absolute;
+    left:0;
+    top:62px;
+    background:#1F1F1F;
+    min-width:220px;
+}
+
+.submenu:hover {
+    display:block;
+}
+
+.submenu li a {
+    padding-right:60px;
+}
+
+.menu a:hover {
+    color:#D3966C;
+}
+
+.menu li.active > a {
+    color:#D3966C;
+}
+
+.menu a:hover + .submenu {
+    display:block;
+}
+
+.homeText {
+    width:600px;
+    margin:0 auto;
+    text-align:center;
+}
+
+.column33:first-of-type {
+margin-left:0;
+}
+
+.column33 hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.column33 {
+float:left;
+width:265px;
+position:relative;
+margin-left:55px
+}
+
+.column33 h4 {
+text-align:center;
+font-size:18px;
+}
+
+.column33 p {
+text-align:center;
+}
+
+.photo{
+	width: 80%;
+    border-radius: 50%;
+    margin-left: 10%;
+}
+
+#footer {
+    margin-top:-20px;
+    position:relative;
+    z-index:3;
+    width:100%;
+    background:#1F1F1F;
+}
+
+.footercol {
+    width: 240px;
+    float: left;
+}
+
+#footer h4 {
+    color: rgb(247, 227, 148);
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+#footer p {
+    color: white;
+}
+
+body .item [data-pin-log="button_pinit"] {
+position:absolute !important;
+top:10px;
+left:10px;
+display:none !important;
+z-index:400;
+}
+
+.item:hover [data-pin-log="button_pinit"] {
+display:block !important;
+}
+
+
+#img_container {
+    width:100%;
+    height:340px;
+    overflow:hidden;
+    position:relative;
+}
+
+.grid {
+    width:920px;
+}
+
+#dt .ui-datepicker {
+width: 100% !important; /*what ever width you want*/
+}
+
+.item {
+  width:  295px;
+  height: 295px;
+  float: left;
+  overflow:hidden;
+  margin-bottom:5px;
+}
+
+.item img{
+  width:  auto;
+  height: 100%;
+}
+
+.item.double {
+  width:  600px;
+  height: 600px;
+}
+
+.item.double_height {
+  width:  295px;
+  height: 600px;
+}
+
+.item.double_width {
+  width:  600px;
+  height: 295px;
+}
+
+.item.double_width img{
+  width:  100%;
+  height: auto;
+}
+
+.book_button {
+    display:inline-block;
+    border:3px solid rgba(0,0,0,0.7);
+    padding:8px 30px;
+    color:rgba(0,0,0,0.7);
+    text-align:center;
+    margin-top:6px;
+}
+
+.book_button:hover {
+    border:3px solid rgba(0,0,0,0.5);
+    color:rgba(0,0,0,0.5);
+}
+
+.fancybox img:hover  {
+    opacity:0.7;
+}
+
+.right_block {
+    float:left;
+    width:600px;
+}
+
+.sidebar {
+    background:#DBA885; 
+    width:295px; 
+    padding:20px 30px; 
+}
+
+.sidebar_block {
+	background:#DBA885; 
+	margin-left:10px; 
+    float:left;
+}
+
+.content_text {
+    width:600px; 
+    height:100%; 
+    background:#EFEACB; 
+    float:left;  
+    padding:20px 30px;
+}
+
+.content_block {
+    margin:0 0 10px 0;
+}
+
+.ui-datepicker-calendar td { background:#25AD25;}
+.ui-datepicker-calendar td span, .ui-datepicker-calendar td a { color:white !important;}
+.ui-datepicker-calendar .ui-state-disabled { background:#DE2020; opacity:1 !important; } 
+.ui-datepicker-calendar .ui-datepicker-other-month { background:white; }
+
+.content_block_villa {
+	margin-bottom:10px;
+}
+
+.fancybox-lock .fancybox-overlay {
+overflow: hidden !important;
+}
+
+.villa_block .content_text {
+	width:450px
+}
+
+.villa_block {
+    height:295px; 
+    margin:0 0 10px 0;
+}
+
+.villa_info_img {
+    overflow:hidden; 
+    height:100%; 
+    width:445px; 
+    margin-left:10px; 
+    float:left;
+}
+
+.booking_text {
+    background:#CEC383; 
+    width:295px; 
+    padding:20px 30px; 
+    margin-left:10px; 
+    float:left;
+}
+
+.home_logo {
+    position:absolute;
+    top:50%;
+    left:50%;
+	width:400px;
+    margin-left:-200px;
+    margin-top:-180px;
+    z-index:888;
+    
+}
+
+@media (max-width: 950px) {
+    h2 {
+        font-size: 80px;
+        margin-left: -150px;
+        margin-top: -30px;
+    }
+    
+    .wrapper.home {
+        padding: 40px 10px;
+        padding-bottom:10px;
+    }
+    
+  .nav-wrapper {
+    display: none;
+  }
+  
+  #img_container {
+      display:none;
+  }
+  
+  #dl-menu {
+    display: block;
+  }
+  
+  .homeText {
+      width:100%;
+  }
+  
+  #map-canvas {
+      display:none;
+  }
+  
+  .right_block {
+      width:100%;
+  }
+  
+  .sidebar {
+      width:100%; 
+      margin-left:0px; 
+  }
+  
+  .content_text {
+      width:100%; 
+      height:auto; 
+  }
+  
+  .content_block {
+      height:auto; 
+      margin:0 0 10px 0;
+  }
+  
+  .villa_info_img {
+      height:260px; 
+      width:100%; 
+      margin-left:0px;    
+  }
+  
+  .booking_text {
+      margin-top:10px;
+      width:100%; 
+      margin-left:0px; 
+  }
+  
+  .grid {
+      width:100%;
+  }
+  
+  .item { 
+      display:block;
+      width:100% !important;
+      height:250px !important;
+  }
+}

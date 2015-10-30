@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>School Killer 2000</title>
+</head>
+
+<body>
+<ul>
+{% for course in courses %}
+    <li><a href={{ path('course_type', {'course_type':course.id}) }}>{{ course.title }}</a>
+{% endfor %}
+</ul>
+</body>
+
+</html>

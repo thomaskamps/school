@@ -1,0 +1,25 @@
+{% extends 'form_div_layout.html.twig' %}
+
+{% block collection_type %}
+<div class="">
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">{{ form_label(form) }}</div>
+      
+      <ul {{ block('widget_container_attributes') }}>
+          {% for child in form %}
+          <li class="list-group-item">
+              {{ form_widget(child) }}
+              <!-- {{ form_label(child) }} -->
+          </li>
+          {% endfor %}
+      </ul>
+      <div class="panel-body">
+        <p>
+            {{ form_errors(form) }}
+            <a href="#" class="pull-right btn btn-default add_form_{{ form.vars.attr.type }}"><i class="fa fa-plus"></i> Toevoegen</a>
+        </p>
+      </div>
+    </div>
+</div>
+{% endblock collection_type %}

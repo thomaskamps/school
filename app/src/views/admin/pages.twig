@@ -1,0 +1,141 @@
+{% extends "admin/layout.twig" %}
+{% import 'macros/recursiveList.twig' as recursiveList %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ app.request.basepath }}/bower_components/bootstrap-css/css/bootstrap.min.css">
+    <script src="{{ app.request.basepath }}/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="{{ app.request.basepath }}/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css">
+    <script src="{{ app.request.basepath }}/bower_components/ckeditor/ckeditor.js"></script>
+    <script src="{{ app.request.basepath }}/assets/admin/plugins/jasny/jasny-bootstrap.min.js"></script>
+    <link href="{{ app.request.basepath }}/assets/admin/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet"/>
+    <script src="{{ app.request.basepath }}/bower_components/ckeditor/adapters/jquery.js"></script>
+    <script>
+    $(document).ready(function() {
+        var table = $('#overview').DataTable( {
+            language: {
+                search: "",
+                searchPlaceholder: "Search...",
+            },
+            bSort: false,
+            bPaginate: false,
+            bInfo: false
+        });
+    
+        $('#dataTablesSearch').on( 'keyup', function () {
+            table.search( this.value ).draw();
+        } );
+    });
+    </script>
+    <style>
+    
+    
+    h1, h2, h3, h4, h5 {
+        font-family: 'Lobster', Georgia, Times, serif;
+        font-size:30px;
+        line-height:30px;
+    }
+    
+    body {
+        font-family: 'Cabin', Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        line-height: 25px;
+        color:white;
+
+        background: -webkit-linear-gradient(90deg, #DAE2F8 10%, #D6A4A4 90%); /* Chrome 10+, Saf5.1+ */
+        background:    -moz-linear-gradient(90deg, #DAE2F8 10%, #D6A4A4 90%); /* FF3.6+ */
+        background:     -ms-linear-gradient(90deg, #DAE2F8 10%, #D6A4A4 90%); /* IE10 */
+        background:      -o-linear-gradient(90deg, #DAE2F8 10%, #D6A4A4 90%); /* Opera 11.10+ */
+        background:         linear-gradient(90deg, #DAE2F8 10%, #D6A4A4 90%); /* W3C */
+        
+    }
+    
+    input, textarea {
+        color:black;
+    }
+    .wrapper {
+        width:1000px;
+        margin:0 auto;
+        padding:40px 10px;
+        position:relative;
+    }
+
+    table .glyphicon {
+        font-size: 20px;
+    }
+    
+    .btn-black, .btn-black:hover, .input-group-addon, .input-group-addon:hover {
+        background:#373737;
+        color:white;
+        border: 1px solid #373737;
+        border-right: 0;
+    }
+    
+    table, table a {
+        color:white;
+    }
+
+    .tableHeader {
+        margin-bottom:15px;
+    }
+
+    .dataTables_filter {
+      display: none;
+    }
+    
+    input, textarea, #form .cke, select {
+        margin-bottom:1em;
+    }
+    label { 
+        display:block;
+    }
+    
+    .btn-file {
+        width:48.5%;
+    }
+    
+    .gallery_item input {
+        margin-bottom:5px;
+    }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+
+    <div class="tableHeader col-md-12" style="padding:13px 0px; background:rgba(0,0,0,0.35);">
+        <div class="col-md-6">
+            <a href="{{ path(create_route) }}" class="btn btn-black btn-md" role="button">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create {{form_type|lower}}
+            </a>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group">
+                <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+                <input type="text" class="form-control" id="dataTablesSearch" placeholder="Search...">
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="tableContent col-md-12" style="padding:5px 15px; background:rgba(0,0,0,0.35);">
+    
+        <table id="overview" class="table row-border" cellspacing="0" width="100%">
+              <thead>
+                  <tr>
+                      <th>Title</th>
+                      <th class="text-center" width="90">Visible</th>
+                      <th class="text-center" width="90">Edit</th>
+                      <th class="text-center" width="60">Remove</th>
+                  </tr>
+              </thead>
+
+            <tbody>
+                {{ recursiveList.recursiveList(objects) }}
+            </tbody>
+    	</table>
+
+    </div>
+    
+{% endblock %}

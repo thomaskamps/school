@@ -1,0 +1,16 @@
+{% block nav %}
+	<nav style="width:100%; background:#1F1F1F; height:62px; position:fixed; z-index:9999; -webkit-box-shadow: 0 0px 20px rgba(0, 0, 0, .5); box-shadow: 0 0px 20px rgba(0, 0, 0, .5);">
+		<div id="dl-menu" class="dl-menuwrapper">
+			<button class="dl-trigger">Open Menu</button>
+			{{ recursiveListFront.recursiveListFront(pages) }}
+		</div><!-- /dl-menuwrapper -->
+        <div class="nav-wrapper">
+            {% if page.slug is defined %}
+                {% set slug = page.slug %} 
+            {% else %}
+                {% set slug = '/' %} 
+            {% endif %}
+            {{ recursiveListDesktop.recursiveListDesktop(pages, slug) }}
+        </div>
+    </nav>
+{% endblock %}

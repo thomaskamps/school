@@ -1,0 +1,46 @@
+{% macro recursiveListFront(objects, subpage, depth = 0, recursive_slug = '') %}
+
+    {% set _hit = false %}
+
+    {% for _item in objects %}
+        {% set _value = ( null != _item.subpage and null != _item.subpage.id ? _item.subpage.id : null ) %}
+
+        {% if (subpage == _value) %}
+
+            {% if not _hit %}
+                {% if depth == 0 %}
+                    <ul class="dl-menu">
+                    <li>
+                        <a href="{{ app.request.basePath }}/">Home</a>
+                    </li>    
+                {% else %}
+                    <ul class="dl-submenu">
+                {% endif %}
+                {% set _hit = true %}
+            {% endif %}
+	    
+	    {% if ( _item.slug == 'real-estate') %}
+	    <li>
+                <a target="_blank" href="http://realestate.sumberkimahill.com/">{{ _item.title }}</a>
+            </li>
+	    {% else %}
+            <li>
+                <a href="{{ app.request.basePath }}/{{ recursive_slug ~ _item.slug }}">{{ _item.title }}</a>
+
+                {{ _self.recursiveListFront(objects, _item.id, depth + 1, recursive_slug ~ _item.slug ~ '/' ) }}
+            </li>
+	    {% endif %}
+	    {% if ( _item.slug == 'conditions') %}
+	    <li>
+                <a href="{{ path('inquire') }}">Inquire now</a>
+            </li>
+	    {% endif %}
+        {% endif %}
+
+    {% endfor %}
+
+    {% if _hit %}
+        </ul>
+    {% endif %}
+
+{% endmacro %}

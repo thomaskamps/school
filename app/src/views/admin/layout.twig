@@ -1,0 +1,32 @@
+{% use "admin/nav.twig" %}
+
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        {% block head %}
+           
+        {% endblock %}
+    </head>
+    
+    <body>
+        <div class="wrapper">
+            
+            
+            {% block nav %}{{ parent() }}{% endblock %}
+            
+            
+            <div id="content" class="col-md-9">
+                {% block content %}{% endblock %}
+            </div>
+            
+            <div id="footer">
+                {% block footer %}
+                {% endblock %}
+            </div>
+        <div class="clearfix"></div>
+        </div>
+        
+    </body>
+
+</html>
