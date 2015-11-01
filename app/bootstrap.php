@@ -3,7 +3,6 @@
 error_reporting(E_ALL ^ E_STRICT);
 
 require_once __DIR__.'/../vendor/autoload.php';
-include_once __DIR__.'/settings.php';
 
 define('APP_DIR', dirname(__FILE__).'/src');
 define('TMP_DIR', dirname(__FILE__).'/../tmp');

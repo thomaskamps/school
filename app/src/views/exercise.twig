@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ data.title }} oefenen</title>
+	<script src="{{ app.request.basepath }}/bower_components/jquery/dist/jquery.min.js"></script>
+	<link href="{{ app.request.basepath }}/assets/css/style1.css" type="text/css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Short+Stack' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+		var data = [{% for exercise in data.exercise %}{{ exercise|json_encode()|raw }}, {% endfor %}];
+	</script>
+
+</head>
+
+<body>
+
+<div id="container">
+
+	<div id="term1"></div>
+	<div style="clear: both;"></div>
+	<div id="term2"></div>
+	<div id="bar"></div>
+
+	<div id="answer">
+		<form>
+		<label for="answerNumber">Wat is je antwoord?</label>
+		<input type="number" name="answerNumber" id="answerNumber"  name="answer">
+		<input type="submit" onclick="checkAnswer(); return false;" class="btn" value="Controleer">
+		</form>
+	</div>
+	
+</div>
+
+<script src="{{ app.request.basepath }}/assets/js/scripts.js"></script>
+</body>

@@ -14,8 +14,8 @@ class CourseType {
         
     		$objects = $query->getResult();
 
-			return $app['twig']->render('home.twig', array(
-                "courses" => $objects,
+			return $app['twig']->render('exercise.twig', array(
+                "data" => $objects[0],
 			));
 			
 			
